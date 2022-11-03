@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: python-app
+          image: gcr.io/moustafa-saber-project/project:python
+          ports:
+            - containerPort: 8000
+          env:
+            - name: REDIS_PORT
+              value: "6379"
