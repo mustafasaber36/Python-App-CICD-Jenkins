@@ -30,7 +30,7 @@ pipeline {
                     sh 'pwd'
                     sh 'ls'
                     sh 'kubectl apply -f ~/workspace/"python pipeline"/kubernetes/redis.yml'
-                    sh 'kubectl apply -f ~/workspace/"python pipeline"/kubernetes/backend-servcie.yml' 
+                    sh 'kubectl apply -f ~/workspace/"python pipeline"/kubernetes/backend-service.yml' 
                     sh 'kubectl apply -f ~/workspace/"python pipeline"/kubernetes/project-python.yml'
                     sh 'kubectl apply -f ~/workspace/"python pipeline"/kubernetes/frontend-service.yml'
                     sh 'kubectl get svc'
